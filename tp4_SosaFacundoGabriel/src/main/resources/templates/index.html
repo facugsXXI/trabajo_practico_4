@@ -1,10 +1,132 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Bootstrap</title>
+	    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	    <link th:rel="stylesheet" th:href="@{/css/estilos.css}"> 
+	</head>
 <body>
+	   <header class="bg-primary text-white text-center py-2">
+        <div class="container">
+        	<img src="https://i.pinimg.com/736x/4f/b9/1a/4fb91a7e57718c1829b342992e923176.jpg" alt="Logotipo" class="mb-3" style="max-width: 150px;">
+            <h1>Facultad de Veterinaria</h1>
+            <p class="lead">Universidad Nacional de Jujuy</p>
+            <p class="lead">"Cuidando la salud animal y humana (un caso perdido)"</p>
+        </div>
+    </header>
 
+    <div class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Principal</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Acerca de</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Carreras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Noticias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container my-4">
+        <div class="row">
+
+            <!-- Contenido Principal -->
+            <main class="col-md-9">
+                <section>
+                    <h2>Sobre Nosotros</h2>
+                    <p>La Facultad de Veterinaria de la Universidad Nacional de Jujuy se dedica a la formación de profesionales en el campo de la medicina veterinaria, con un fuerte énfasis en la salud animal y la investigación.</p>
+                </section>
+
+                <section class="mt-4">
+                    <h2>Noticias Recientes</h2>
+                    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
+                        <!-- Tarjeta 1-->  
+                        <div class="col">
+                            <div class="card h-100">
+                              <a href="https://www.infobae.com/perros-y-gatos/2024/05/24/caza-indiscriminada-de-pumas-que-medidas-se-pueden-llevar-a-cabo-para-proteger-a-los-felinos/">
+                                  <img src="https://www.infobae.com/new-resizer/fX9WZ0wOy5aSpOorU_epSsTNkTA=/992x558/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/YYBHU6NQLBCL3MMKR2GKGN3MOQ.jpg" class="card-img-top" alt="..." >
+                              </a>
+                              
+                              <div class="card-body">
+                                <h5 class="card-title">Caza indiscriminada de pumas</h5>
+                                <p class="card-text"> Qué medidas se pueden llevar a cabo para proteger a los felinos </p>
+                              </div>
+                            </div>
+                          </div>
+                        <!-- Tarjeta 2-->  
+                        <div class="col">
+                            <div class="card h-100">
+                              <a href="https://www.clarin.com/videos/paraiso-animales-vivir-800-animales-rescatados-maltrato_0_puCscuCKKJ.html">
+                                  <img src="https://www.clarin.com/img/2024/05/08/W7lhSpSYs_1256x620__1.jpg" class="card-img-top" alt="..." >
+                              </a>
+                              
+                              <div class="card-body">
+                                <h5 class="card-title">El Paraíso de los Animales</h5>
+                                <h6 class="card-subtitle"> Cómo es vivir con más de 800 animales rescatados del maltrato </h6>
+                                <p class="card-text"> Clarín fue a General Rodríguez para conocer cómo funciona el lugar de rescate que es sostenido por donaciones a cuenta gota</p>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                   
+                </section>
+            </main>
+
+            <!-- Aside -->
+            <aside class="col-md-3">
+                <h5>Enlaces Rápidos</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="https://biblioteca.mincyt.gob.ar/">Biblioteca</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://www.fi.unju.edu.ar/secretarias/sec-academica/calendario-academico.html">Calendario académico</a>
+                    </li>
+
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-white text-center py-2">
+        <div class="container">
+            <p>Dirección: Calle Falsa 777, San Salvador de Jujuy, Jujuy</p>
+            <p>Teléfono: +549 388 444 4444 | Email: info@veterinaria.unju.edu.ar</p>
+            <div>
+                <a class="text-white me-3">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a class="text-white me-3">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a class="text-white">
+                    <i class="fa-instagram"></i> Instagram
+                </a>
+            </div>
+            <p class="mt-3">&copy; 2024 Facultad de Veterinaria - Universidad Nacional de Jujuy</p>
+        </div>
+    </footer>
+
+
+
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
