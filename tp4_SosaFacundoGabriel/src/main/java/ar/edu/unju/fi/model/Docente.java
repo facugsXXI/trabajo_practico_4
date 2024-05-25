@@ -10,7 +10,7 @@ public class Docente {
 	public Docente(String legajo, String nombre, String apellido, String email, int telefono) {
 		super();
 		this.legajo = legajo;
-		this.nombre = nombre;
+		this.nombre = nombre;  
 		this.apellido = apellido;
 		this.email = email;
 		this.telefono = telefono;
