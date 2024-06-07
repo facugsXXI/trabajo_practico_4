@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/css/estilos.css}">
+	<title>Aside</title>
+</head>
+<body>
+	<aside class="col-md-3"  th:fragment="aside">
+                <h5>Enlaces Rápidos</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="https://biblioteca.mincyt.gob.ar/">Biblioteca</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://www.fi.unju.edu.ar/secretarias/sec-academica/calendario-academico.html">Calendario académico</a>
+                    </li>
+
+                </ul>
+    </aside>
+	
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

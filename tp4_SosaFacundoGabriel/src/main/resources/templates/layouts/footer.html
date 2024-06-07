@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/css/estilos.css}">
+	<title>Footer</title>
+</head>
+<body>
+	<footer class="bg-dark text-white text-center py-2" th:fragment="footer">
+        <div class="container">
+            <p>Dirección: Calle Falsa 777, San Salvador de Jujuy, Jujuy</p>
+            <p>Teléfono: +549 388 444 4444 | Email: info@veterinaria.unju.edu.ar</p>
+            <div>
+                <a class="text-white me-3">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a class="text-white me-3">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a class="text-white">
+                    <i class="fa-instagram"></i> Instagram
+                </a>
+            </div>
+            <p class="mt-3">&copy; 2024 Facultad de Veterinaria - Universidad Nacional de Jujuy</p>
+        </div>
+    </footer>
+	
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

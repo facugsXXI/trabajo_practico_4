@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/css/estilos.css}">
+	<title>Header</title>
+</head>
+<body>
+	<header th:fragment="header">
+        <nav class="navbar navbar-expand-lg bg-secondary">
+	        <div class="container-fluid">
+	          <a class="navbar-brand" href="#">
+			      <img  src="https://i.pinimg.com/736x/4f/b9/1a/4fb91a7e57718c1829b342992e923176.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+			      Principal
+			  </a>
+	          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	          </button>
+	          <div class="collapse navbar-collapse" id="navbarNav">
+	            <ul class="navbar-nav">
+	              <li class="nav-item">
+	                <a class="nav-link active" aria-current="page" href="#">Acerca de</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" href="#">Carreras</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" href="#">Noticias</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" href="#">Contacto</a>
+	              </li>
+	            </ul>
+	          </div>
+	        </div>
+      </nav>
+    </header>
+	
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
