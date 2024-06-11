@@ -7,6 +7,10 @@ public class Docente {
 	private String apellido;
 	private String email;
 	private int telefono;
+	
+	public Docente() {
+		
+	}
 	public Docente(String legajo, String nombre, String apellido, String email, int telefono) {
 		super();
 		this.legajo = legajo;
