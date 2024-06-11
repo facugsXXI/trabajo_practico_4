@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Formulario Docente</title>
+	    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	    <link th:rel="stylesheet" th:href="@{/css/estilos.css}"> 
+	</head>
+<body>
+	<header th:replace="/layouts/header :: header"> </header>
+	
+	<div class="container">
+	<form th:object="${docente}" th:action="${band}?@{/docentes/modificarDocente}:@{/docentes/guardar}" method="post" enctype="multipart/form-data">
+		<div class="row g-3">
+			
+				<div class="mb-3">
+				    <label for="legajo" class="form-label">Legajo</label>
+				    <input type="text" class="form-control" id="legajo" th:field="*{legajo}" title="Ingresa un número de 4 dígitos." required>
+				</div>
+				<div class="mb-3">
+				    <label for="nombreID" class="form-label">Nombre</label>
+				    <input type="text" class="form-control" id="nombreID" title="Ingresa un nombre valido, sin números o caracteres especiales." pattern="[A-Za-z\s]+" th:field="*{nombre}" required>
+				</div>
+				<div class="mb-3">
+				    <label for="apellidoID" class="form-label">Apellido</label>
+				    <input type="text" class="form-control" id="apellidoID" th:field="*{apellido}" pattern="[A-Za-z\s]+" title="Ingresa un apellido valido, sin números o caracteres especiales." required>
+				</div>
+				<div class="mb-3">
+				    <label for="dniID" class="form-label">Email</label>
+				    <input type="email" class="form-control" id="dniID" th:field="*{email}" title="Ingresa un número de 8 digitos." required>
+				</div>
+				<div class="mb-3">
+				    <label for="telID" class="form-label">Número de Télefono</label>
+				    <input type="tel" class="form-control" id="telID" th:field="*{telefono}" title="Ingresa un número de 10 dígitos." required>		    
+				</div>
+				
+			</div>
+			<button class="btn btn-success rounded-pill" type="submit">Guardar</button>
+		</form> 
+	</div>	
+	<footer th:replace="/layouts/footer :: footer"></footer>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
