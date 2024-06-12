@@ -28,7 +28,7 @@ public class AlumnoService {
 		return alumnos;
 	}
 
-	//guardar el docente
+	//guardar un alumno
 	public void guardar(Alumno alumno) {
 		alumnos.add(alumno);
 	}
