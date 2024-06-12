@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Lista Carreras</title>
+	    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	    <link th:rel="stylesheet" th:href="@{/css/estilos.css}"> 
+	</head>
+<body>
+	<header th:replace="~{/layouts/header :: header}"> </header>
+	
+	<div class="container-fluid">
+	<a class="btn btn-primary mt-4" th:href="@{/carreras/nuevo}">Nuevo </a>
+		<div class="row">
+		<main class="col-md-9">
+			<table class="table table-striped-columns table-primary">
+				<tr>
+					<th>Codigo</th> 
+					<th>Nombre</th>
+					<th>Cantidad de Años</th>
+					<th>Estado</th>
+					<th>Acciones</th>
+				</tr>
+				<tr th:each="carrera : ${carreras}">
+				 	<td th:text="${carrera.codigo}"></td>
+				  	<td th:text="${carrera.nombre}"></td>
+				  	<td th:text="${carrera.cantidadAnios}"></td>
+				  	<td th:text="${carrera.estado}"></td>
+				 	<td> 
+				 		<a th:href="@{'/carreras/modificar/'+${carrera.codigo}}" class="btn btn-warning" >Modificar</a>
+				 		<a th:href="@{'/carreras/borrar/'+${carrera.codigo}}" class="btn btn-danger">Borrar</a>					
+				 	</td>	 	
+				</tr>
+			</table>
+		</main>
+		
+		<aside th:replace="~{/layouts/aside :: aside}"></aside>
+		
+		</div>
+	</div>
+	
+	<footer th:replace="~{/layouts/footer :: footer}"></footer>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

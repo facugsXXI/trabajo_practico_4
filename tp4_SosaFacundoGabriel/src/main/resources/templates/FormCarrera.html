@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Formulario Carrera</title>
+	    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	    <link th:rel="stylesheet" th:href="@{/css/estilos.css}"> 
+	</head>
+<body> 
+	<header th:replace="~{/layouts/header :: header}"> </header>
+	
+	<div class="container">
+	<form th:object="${carrera}" th:action="${band}?@{/carreras/modificarCarrera}:@{/carreras/guardar}" method="post" enctype="multipart/form-data">
+		<div class="row g-3">
+			
+				<div class="mb-3">
+				    <label for="codigoID" class="form-label">Codigo</label>
+				    <input type="text" class="form-control" id="codigoID" th:field="*{codigo}" required>
+				</div>
+				<div class="mb-3">
+				    <label for="nombreID" class="form-label">Nombre</label>
+				    <input type="text" class="form-control" id="nombreID" title="Ingresa un nombre valido, sin números o caracteres especiales." pattern="[A-Za-z\s]+" th:field="*{nombre}" required>
+				</div>
+				<div class="mb-3">
+				    <label for="cantidadID" class="form-label">Cantidad de Años</label>
+				    <input type="number" class="form-control" id="cantidadID" th:field="*{cantidadAnios}" required>
+				</div>
+				<div class="mb-3">
+				    <label for="estadoID" class="form-label">Estado</label>
+				    <input type="text" class="form-control" id="estadoID" th:field="*{estado}" title="Ingresa estado: Activo/Inactivo." required>
+				</div>		
+			</div>
+			<button class="btn btn-success rounded-pill" type="submit">Guardar</button>
+		</form> 
+	</div>	
+	<footer th:replace="~{/layouts/footer :: footer}"></footer>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
