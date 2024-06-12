@@ -8,6 +8,7 @@ public class Materia {
 	private Modalidad modalidad;
 	private Docente docente;
 	private Carrera carrera;
+	
 	public Materia(){}
 	
 	public enum Modalidad {

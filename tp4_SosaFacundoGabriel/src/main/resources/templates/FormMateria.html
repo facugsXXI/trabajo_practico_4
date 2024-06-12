@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Formulario Materia</title>
+	    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	    <link th:rel="stylesheet" th:href="@{/css/estilos.css}"> 
+	</head>
+<body> 
+	<header th:replace="~{/layouts/header :: header}"> </header>
+	
+	<div class="container">
+	<form th:object="${materia}" th:action="${band}?@{/materias/modificarMateria}:@{/materias/guardar}" method="post" enctype="multipart/form-data">
+		<div class="row g-3">
+			
+				<div class="mb-3">
+				    <label for="codigoID" class="form-label">Codigo</label>
+				    <input type="text" class="form-control" id="codigoID" th:field="*{codigo}" required>
+				</div>
+				<div class="mb-3">
+				    <label for="nombreID" class="form-label">Nombre</label>
+				    <input type="text" class="form-control" id="nombreID" title="Ingresa un nombre valido, sin números o caracteres especiales." pattern="[A-Za-z\s]+" th:field="*{nombre}" required>
+				</div>
+				<div class="mb-3">
+				    <label for="cursoID" class="form-label">Curso</label>
+				    <input type="text" class="form-control" id="cursoID"  pattern="[A-Za-z\s]+" th:field="*{curso}" required>
+				</div>
+				<div class="mb-3">
+				    <label for="cantidadID" class="form-label">Cantidad de Horas</label>
+				    <input type="number" class="form-control" id="cantidadID" th:field="*{cantidadHoras}" required>
+				</div>
+				<div class="mb-3">
+	                <label for="modalidadID">Modalidad</label>
+	                <select class="form-control" id="modalidadID" th:field="*{modalidad}">
+	                    <option th:each="modalidad : ${modalidades}" th:value="${modalidad}" th:text="${modalidad}"></option>
+	                </select>
+           	 	</div>
+				<div class="mb-3">
+	                <label for="docenteID">Docente</label>
+	                <select class="form-control" id="docenteID" th:field="*{docente.legajo}">
+	                    <option th:each="docente : ${docentes}" th:value="${docente.legajo}" th:text="${docente.nombre}"></option>
+	                </select>
+            	</div>	
+            	<div class="mb-3">
+	                <label for="carreraID">Carrera</label>
+	                <select class="form-control" id="carreraID" th:field="*{carrera.codigo}">
+	                    <option th:each="carrera : ${carreras}" th:value="${carrera.codigo}" th:text="${carrera.nombre}"></option>
+	                </select>
+            	</div>	
+			</div>
+			<button class="btn btn-success rounded-pill" type="submit">Guardar</button>
+		</form> 
+	</div>
+	<footer th:replace="~{/layouts/footer :: footer}"></footer>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
