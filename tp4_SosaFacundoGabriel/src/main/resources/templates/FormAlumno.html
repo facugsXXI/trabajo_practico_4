@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<title>Formulario Docente</title>
+		<title>Formulario Alumno</title>
 	    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 	    <link th:rel="stylesheet" th:href="@{/css/estilos.css}"> 
 	</head>
@@ -11,12 +11,12 @@
 	<header th:replace="/layouts/header :: header"> </header>
 	
 	<div class="container">
-	<form th:object="${docente}" th:action="${band}?@{/docentes/modificarDocente}:@{/docentes/guardar}" method="post" enctype="multipart/form-data">
+	<form th:object="${alumno}" th:action="${band}?@{/alumnos/modificarAlumno}:@{/alumnos/guardar}" method="post" enctype="multipart/form-data">
 		<div class="row g-3">
 			
 				<div class="mb-3">
-				    <label for="legajo" class="form-label">Legajo</label>
-				    <input type="text" class="form-control" id="legajo" th:field="*{legajo}" title="Ingresa un número de 4 dígitos." required>
+				    <label for="dniID" class="form-label">Dni</label>
+				    <input type="text" class="form-control" id="dniID" th:field="*{dni}" title="Ingresa un número de 4 dígitos." required>
 				</div>
 				<div class="mb-3">
 				    <label for="nombreID" class="form-label">Nombre</label>
@@ -34,7 +34,18 @@
 				    <label for="telID" class="form-label">Número de Télefono</label>
 				    <input type="tel" class="form-control" id="telID" th:field="*{telefono}" title="Ingresa un número de 10 dígitos." required>		    
 				</div>
-				
+				<div class="mb-3">
+				    <label for="fechaNacimientoID" class="form-label">Fecha de Nacimiento</label>
+				    <input type="date" class="form-control" id="fechaNacimientoID" th:field="*{fechaNacimiento}"  required>		    
+				</div>
+				<div class="mb-3">
+				    <label for="domicilioID" class="form-label">Domicilio</label>
+				    <input type="text" class="form-control" id="domicilioID" th:field="*{domicilio}"  required>
+				</div>
+				<div class="mb-3">
+				    <label for="libretaID" class="form-label">Libreta Universitaria</label>
+				    <input type="text" class="form-control" id="libretaID" th:field="*{libretaUniversitaria}" required>
+				</div>
 			</div>
 			<button class="btn btn-success rounded-pill" type="submit">Guardar</button>
 		</form> 
@@ -42,4 +53,4 @@
 	<footer th:replace="/layouts/footer :: footer"></footer>
 		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
-</html>
+</html>>

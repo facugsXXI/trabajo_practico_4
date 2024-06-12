@@ -62,7 +62,7 @@ public class DocenteController {
 		}
 	
 	@PostMapping("/modificarDocente")
-	public String modificarDocente(@ModelAttribute("nuevaCarrera") Docente docenteModificado) {	
+	public String modificarDocente(@ModelAttribute("docente") Docente docenteModificado) {	
 		//guardar
 		docenteService.modificarDocente(docenteModificado);
 		

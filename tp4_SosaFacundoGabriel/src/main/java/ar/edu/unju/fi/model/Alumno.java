@@ -13,6 +13,7 @@ public class Alumno {
 	private String libretaUniversitaria;
 	
 	
+	public Alumno() {} 
 	public Alumno(int dni, String nombre, String apellido, String email, int telefono, LocalDate fechaNacimiento,
 			String domicilio, String libretaUniversitaria) {
 		super();

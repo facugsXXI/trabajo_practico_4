@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import ar.edu.unju.fi.model.Docente;
 
 
-@Service
+@Service 
 public class DocenteService {
 	private static List<Docente> docentes;
 

@@ -9,33 +9,40 @@
 	</head>
 <body>
 	<header th:replace="/layouts/header :: header"> </header>
+	
 	<div class="container-fluid">
-		<div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div> 
-		<table class="table table-striped-columns table-primary">
-		<tr>
-			<th>Legajo</th>
-			<th>Nombre</th>
-			<th>Apellido</th>
-			<th>Email</th>
-			<th>T�lefono</th>
-			<th>Acciones</th>
-		</tr>
-		<tr th:each="docente : ${docentes}">
-		 	<td th:text="${docente.legajo}"></td>
-		  	<td th:text="${docente.nombre}"></td>
-		  	<td th:text="${docente.apellido}"></td>
-		  	<td th:text="${docente.email}"></td>
-		 	<td th:text="${docente.telefono}"></td>
-		 	<td> 
-		 		<a th:href="@{'/docentes/modificar/'+${docente.legajo}}" class="btn btn-warning" >Modificar</a>
-		 		<a th:href="@{'/docentes/borrar/'+${docente.legajo}}" class="btn btn-danger">Borrar</a>					
-		 	</td>	 	
-		</tr>
-		</table>
-		<a class="btn btn-primary" th:href="@{/docentes/nuevo}">Nuevo </a>
+	<a class="btn btn-primary mt-4" th:href="@{/docentes/nuevo}">Nuevo </a>
+		<div class="row">
+		<main class="col-md-9">
+			<table class="table table-striped-columns table-primary">
+				<tr>
+					<th>Legajo</th> 
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Email</th>
+					<th>T�lefono</th>
+					<th>Acciones</th>
+				</tr>
+				<tr th:each="docente : ${docentes}">
+				 	<td th:text="${docente.legajo}"></td>
+				  	<td th:text="${docente.nombre}"></td>
+				  	<td th:text="${docente.apellido}"></td>
+				  	<td th:text="${docente.email}"></td>
+				 	<td th:text="${docente.telefono}"></td>
+				 	<td> 
+				 		<a th:href="@{'/docentes/modificar/'+${docente.legajo}}" class="btn btn-warning" >Modificar</a>
+				 		<a th:href="@{'/docentes/borrar/'+${docente.legajo}}" class="btn btn-danger">Borrar</a>					
+				 	</td>	 	
+				</tr>
+			</table>
+		</main>
+		
+		<aside th:replace="/layouts/aside :: aside"></aside>
 		
 		</div>
+	</div>
+	
 	<footer th:replace="/layouts/footer :: footer"></footer>
-		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
