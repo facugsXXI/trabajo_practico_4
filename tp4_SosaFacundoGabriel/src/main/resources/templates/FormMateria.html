@@ -8,7 +8,7 @@
 	    <link th:rel="stylesheet" th:href="@{/css/estilos.css}"> 
 	</head>
 <body> 
-	<header th:replace="~{/layouts/header :: header}"> </header>
+	<header th:replace="~{/layouts/header :: header}"> </header> 
 	
 	<div class="container">
 	<form th:object="${materia}" th:action="${band}?@{/materias/modificarMateria}:@{/materias/guardar}" method="post" enctype="multipart/form-data">
@@ -53,6 +53,6 @@
 		</form> 
 	</div>
 	<footer th:replace="~{/layouts/footer :: footer}"></footer>
-		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
